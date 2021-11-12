@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>L2:TripleX</i></b></p>
+	
+	<p><i>Сложность: </i><b>7kyu</b></p>
+	<p>Для данной строки верните истину, если за первым экземпляром «x» в строке сразу следует строка «xx».</p>
+	<p></p>
+	
+    <p>Example:</p>
+	<p>tripleX("abraxxxas") → true</p>
+	<p>tripleX("xoxotrololololololoxxx") → false</p>
+	<p>tripleX("softX kitty, warm kitty, xxxxx") → true</p>
+	<p>tripleX("softx kitty, warm kitty, xxxxx") → false</p>
+	
+	<ul>
+		<li>заглавные Х не считаются появлением "х"</li>
+		<li>если нет "х", верните false</li>
+	</ul>
+	
+</body>
+
+<script>
+
+function tripleX(str){
+	return /^[^x]*xxx/.test(str);
+}	
+	console.log( tripleX("xxx xas") );
+	
+	
+	
+</script>
+
+</html>
