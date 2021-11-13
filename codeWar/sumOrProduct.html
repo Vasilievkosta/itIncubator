@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>sumOrProduct</i></b></p>
+	
+	<p><i>Сложность: </i><b>7kyu</b></p>
+	<p>Данн массив arr и число n, если произведение n минимальных элементов больше, чем сумма n максимальных, то функция вернет - 'product'</p>
+	<p>в противном случае вернет - 'sum', а если равны вернет - 'same'</p>
+	
+    <p>Example:</p>
+	<p>[2, 3, 5, 7, 10, 20] => 'sum'. Потому, что (2*3*5 = 30), (7+10+20 = 37)</p>
+	
+	
+</body>
+
+<script>
+
+function sumOrProduct(arr, n){
+	arr.sort((a, b) => a - b);
+	let product = 1;
+	let sum = 0;	
+	for (let i = 0; i < n; i++) {
+		product *= arr[i];		
+	}
+	for (let j = arr.length - 1; j >= arr.length - n; j--) {
+		sum += arr[j];
+	}
+	if (product === sum) return 'same';
+	return product > sum ? 'product' : 'sum';
+}	
+	console.log( sumOrProduct([10,41,8,16,20,36,9,13,20], 3) );
+	
+	
+	
+</script>
+
+</html>
