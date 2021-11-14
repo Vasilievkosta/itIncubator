@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>Least Larger</i></b></p>
+	
+	<p><i>Сложность: </i><b>7kyu</b></p>
+	<p>Имеется массив чисел и заданный индекс, верните индекс наименьшего числа, большего чем элемент в заданном индексе, или -1, если такого индекса нет</p>
+	
+	
+    <p>Example:</p>
+	<p>leastLarget( [4, 1, 3, 5, 6], 0 ) => 3</p>
+	<p>leastLarget( [4, 1, 3, 5, 6], 4 ) => -1</p>
+	
+	
+</body>
+
+<script>
+
+function leastLarget(a, i){
+	let total = a[i];
+	let arr = [];
+	for (let j = 0; j < a.length; j++) {
+		if (a[j] > total) {
+			arr.push(a[j]);
+		}
+	}
+	arr.sort((a,b) => a-b);
+	
+	if (arr.length === 0) return -1;
+	for (let j = 0; j < a.length; j++) {
+		if (a[j] === arr[0]) return j;
+	}
+}	
+	console.log( leastLarget( [4, 1, 3, 5, 6], 4 ) );
+	
+	
+	
+</script>
+
+</html>

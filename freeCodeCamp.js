@@ -66,11 +66,29 @@ function multiply(arr, n) {
     } else {
       return multiply(arr, n - 1) * arr[n - 1];
     }
-  }
+}
+
+// generate-random-fractions-with-javascript
+
+function randomFraction() {
+  return Math.random();
+}
+
+// basic-javascript/generate-random-whole-numbers-with-javascript
+// Используйте метод для генерации и возврата случайного целого числа между 0и 9.
+
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+// generate-random-whole-numbers-within-a-range
+// Создайте функцию с именем, randomRangeкоторая принимает диапазон myMinи myMaxвозвращает случайное целое число, которое больше или равно myMin, и меньше или равно myMax, включительно.
+
+function randomRange(myMin, myMax) {  
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin; 
+}
 
 // 
-
-
 
 
 
