@@ -1,3 +1,63 @@
+// record-collection
+//Коллекция записей
+//Вам дается буквальный объект, представляющий часть вашей коллекции музыкальных альбомов. Каждый альбом имеет уникальный идентификационный номер в качестве ключа и несколько других свойств. Не все альбомы содержат полную информацию.
+
+//Вы начинаете с updateRecordsфункции, которая принимает объектный литерал, recordsсодержащий коллекцию музыкальных альбомов, an id, a prop(like artistor tracks) и a value. Завершите функцию, используя приведенные ниже правила, чтобы изменить объект, переданный в функцию.
+
+//Ваша функция всегда должна возвращать весь объект коллекции записей.
+//Если propнет , tracksи valueне пустая строка, обновление или набор этого альбома propв value.
+//Если propесть, tracksно у альбома нет tracksсвойства, создайте пустой массив и добавьте valueк нему.
+//Если propесть tracksи valueне является пустой строкой, добавьте valueв конец существующего tracksмассива альбома .
+//Если valueэто пустая строка, удалите данное propсвойство из альбома.
+//Примечание:recordCollection для тестов используется копия объекта.
+
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (prop in records[id]) {	
+		if (value === "") {		
+			delete records[id][prop];
+		} else {		
+			if (prop === 'tracks') {			
+				records[id][prop].push(value);
+			} else {
+			console.log(value);
+				records[id][prop] = value;
+			}
+		}
+	} else {	
+		if (prop === 'tracks') {		
+			records[id][prop] = [];			
+			records[id][prop].push(value);
+		} else {
+			records[id][prop] = value;
+		}
+	}
+	
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
 // iterate-odd-numbers-with-a-for-loop
 const myArray = [];
 for (let i = 1; i < 10; i += 2) {
