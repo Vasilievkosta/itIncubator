@@ -158,6 +158,22 @@ function convertToInteger(str) {
 
 convertToInteger("10011");
 
+// use-the-conditional-ternary-operator
+
+function checkEqual(a, b) {
+  return a === b ? 'Equal' : 'Not Equal';
+}
+
+checkEqual(1, 2);
+
+// use-multiple-conditional-ternary-operators
+
+function checkSign(num) {
+  return num === 0 ? 'zero' : num > 0 ? 'positive' : 'negative';
+}
+
+checkSign(10);
+
 // 
 
 

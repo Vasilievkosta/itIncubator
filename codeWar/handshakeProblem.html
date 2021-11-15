@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="ru-Ru">
+<head>
+	<meta sharset="UTF-8" />
+	<title>codeWar</title>
+	<link rel="stylesheet" href="" />	
+</head>
+<body>
+
+<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>Handshake problem</i></b></p>
+	
+	<p><i>Сложность: </i><b>6kyu</b></p>
+	<p>Джонни хотел бы узнать минимальное количество людей, которые участвовали в этом году, просто посчитав все рукопожатия.</p>
+	<p>Помогите Джонни, написав функцию, которая берет количество рукопожатий и возвращает минимальное количество людей, необходимое для выполнения этих рукопожатий (пара фермеров пожимает руки только один раз).</p>
+	
+	
+	
+    <p>Example:</p>	
+
+<script>
+	function getParticipants(handshakes){
+	if (handshakes === 0) return 1;
+	if (handshakes === 1) return 2;
+	if (handshakes === 2) return 3;
+	let count = 1;
+	let res = 0;
+	for (let i = 1; i < handshakes; i++) {
+		res += i;
+		count++;
+		console.log("у "+count+" человек: "+res + " рукопожатий");
+		if (handshakes <= res) return count;
+	}
+}	
+	console.log(getParticipants(12));
+	
+							
+</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>Character Counter</i></b></p>
+	
+	<p><i>Сложность: </i><b>7kyu</b></p>
+	<p>Ваша задача будет заключаться в том, чтобы каждый символ в этом слове имел одинаковое количество вхождений. Вы вернетесь, trueесли он действителен, а falseесли нет.</p>
+	<p>В этом ката заглавные буквы считаются такими же, как и строчные. Следовательно:"A" == "a"</p>
+	<p>Входными данными является строка (без пробелов), содержащая [a-z],[A-Z],[0-9]общие символы. Длина будет 0 < length < 100.</p>
+	
+    <p>Example:</p>
+	<p>"abcabc"является допустимым словом, потому что "a"встречается дважды, "b"появляется дважды и "c"встречается дважды.</p>
+	<p>"abcabcd"это НЕ является допустимым слово , потому что "a"появляется дважды, "b"появляется дважды, "c"появляется дважды, но "d"появляется только один раз!</p>
+	<p>"123abc!" является допустимым словом, потому что все символы появляются в слове только один раз.</p>	
+	
+</body>
+
+<script>
+
+function validateWord(s){
+	let str = s.toLowerCase();
+	let res = {};
+	let arr = [];
+	let count;
+	let set = new Set(str);
+	for (let item of set) {
+		count = 0;
+		for (let i = 0; i < str.length; i++) {
+			if (item === str[i]) {
+				count++;
+			}
+		}
+		arr.push(count);
+		res[item] = count;
+	}
+	console.log(res);
+	console.log(arr);
+	let out = new Set(arr);
+	return out.size === 1;
+	
+	//в принципе вот и все решение!)
+	<!-- const rep = new Set(s.toLowerCase()).size; -->
+	<!-- return s.length % rep ? false : true; -->
+}	
+	console.log( validateWord("aAbbccddeeff") );
+	
+	
+	
+</script>
+
+</html>
