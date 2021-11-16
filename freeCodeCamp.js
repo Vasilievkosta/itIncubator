@@ -58,6 +58,26 @@ function updateRecords(records, id, prop, value) {
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 
+// counting-cards
+
+let count = 0;
+function cc(card) {  
+  let yes = ' Bet';
+  let no = ' Hold';
+
+  if (card === 2 || card === 3 || card === 4 || card === 5 || card === 6) {
+    count += 1;
+  } else if (card === 10 || card === 'J' || card=== 'Q' || card === 'K'|| card === 'A') {
+    count -= 1;
+  } else {
+    count += 0;
+  }
+
+
+  return count > 0 ? count + yes: count + no;  
+}
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+
 // iterate-odd-numbers-with-a-for-loop
 const myArray = [];
 for (let i = 1; i < 10; i += 2) {
