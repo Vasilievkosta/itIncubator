@@ -270,6 +270,118 @@ function countdown(n){
   }
 }
 
+//use-recursion-to-create-a-range-of-numbers
+
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum <= startNum) {
+    return [endNum];
+  } else {
+    const countArray = rangeOfNumbers(startNum, endNum - 1);
+    countArray.push(endNum);
+    return countArray;
+  }
+};
+
+
+//es6/____________
+//compare-scopes-of-the-var-and-let-keywords
+
+function checkScope() {
+  let i = 'function scope';
+  if (true) {
+    let ii = 'block scope';
+    console.log('Block scope i is: ', ii);
+  }
+  console.log('Function scope i is: ', i);
+  return i;
+}
+
+// mutate-an-array-declared-with-const
+
+const s = [5, 7, 2];
+function editInPlace() {
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;  
+}
+editInPlace();
+
+// prevent-object-mutation
+//В этой задаче вы собираетесь использовать Object.freezeдля предотвращения изменения математических констант.
+//Вам необходимо заморозить MATH_CONSTANTSобъект, чтобы никто не мог изменить значение PI, добавить или удалить свойства.
+
+unction freezeObj() {
+  const MATH_CONSTANTS = {
+    PI: 3.14
+  };  
+  Object.freeze(MATH_CONSTANTS);
+  
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch(ex) {
+    console.log(ex);
+  }
+  return MATH_CONSTANTS.PI;
+}
+const PI = freezeObj();
+
+// use-arrow-functions-to-write-concise-anonymous-functions
+
+const magic = () => new Date();
+
+// write-arrow-functions-with-parameters
+
+const myConcat = (arr1, arr2) => {
+  return arr1.concat(arr2);
+};
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+
+// set-default-parameters-for-your-functions
+
+const increment = (number, value = 1) => number + value;
+
+// use-the-rest-parameter-with-function-parameters
+
+const sum = (...args) => {
+  //const args = [x, y, z];
+  return args.reduce((a, b) => a + b, 0);
+}
+
+// use-the-spread-operator-to-evaluate-arrays-in-place
+// Скопируйте все содержимое arr1в другой массив arr2с помощью оператора распространения.
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+arr2 = [...arr1];
+console.log(arr2);
+
+// Приведенный ниже код ES5 используется apply()для вычисления максимального значения в массиве:
+
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr);
+// maximus будет иметь значение 89.
+
+/ /Нам пришлось использовать, Math.max.apply(null, arr)потому что Math.max(arr)возвращается NaN. Math.max()ожидает аргументы, разделенные запятыми, но не массив. Оператор распространения упрощает чтение и сопровождение этого синтаксиса.
+
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr);
+// maximus будет иметь значение 89.
+
+// ...arrвозвращает распакованный массив. Другими словами, он расширяет массив.
+//Однако оператор распространения работает только на месте, например, в аргументе функции или в литерале массива.
+//Следующий код работать не будет: 
+const spreaded = ...arr;
+
+
+
+
+
+
+
+
+
+
 
 
 
