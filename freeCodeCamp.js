@@ -373,6 +373,36 @@ const maximus = Math.max(...arr);
 //Следующий код работать не будет: 
 const spreaded = ...arr;
 
+// use-destructuring-assignment-to-extract-values-from-objects
+// Замените два присваивания эквивалентным деструктурирующим присваиванием.
+// Он по-прежнему должен назначать переменные todayи tomorrowзначения объекта todayи tomorrowиз него HIGH_TEMPERATURES.
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+//const today = HIGH_TEMPERATURES.today;
+//const tomorrow = HIGH_TEMPERATURES.tomorrow;
+
+const {today, tomorrow} = HIGH_TEMPERATURES;
+
+// use-destructuring-assignment-to-assign-variables-from-objects
+// Вот как вы можете дать новые имена переменных в назначении:
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+}; 
+ 
+// const highToday = HIGH_TEMPERATURES.today;
+// const highTomorrow = HIGH_TEMPERATURES.tomorrow;
+const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
+
+//
+ 
 
 
 

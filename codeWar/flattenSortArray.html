@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>Flatten and sort an array</i></b></p>
+	
+	<p><i>Сложность: </i><b>7kyu</b></p>
+	<p>Учитывая двумерный массив целых чисел, верните сплющенную версию массива со всеми целыми числами в отсортированном (возрастающем) порядке.
+
+	
+    <p>Example:</p>
+	<p>[[3, 2, 1], [4, 6, 5], [], [9, 7, 8]] => [1, 2, 3, 4, 5, 6, 7, 8 , 9]</p>
+	
+	
+</body>
+
+<script>
+
+"use strict";
+
+function flattenAndSort(array) {
+  let arr = array.reduce((a, c) => a.concat(c), []);
+  array = arr.sort((a, b) => a - b);
+  return array;
+}
+	console.log( flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]) );
+	
+	
+	
+</script>
+
+</html>
