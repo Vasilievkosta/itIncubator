@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="ru-Ru">
+<head>
+	<meta sharset="UTF-8" />
+	<title>code wars</title>
+	<link rel="stylesheet" href="" />	
+</head>
+<body>	
+	<p>Назавание задачи: <b><i>Find The Parity Outlier</i></b></p>
+	
+	<p><i>Сложность: </i><b>6kyu</b></p>
+	<p>Вам предоставляется массив (который будет иметь длину не менее 3, но может быть очень большим), содержащий целые числа.</p>
+	<p>Массив либо полностью состоит из нечетных целых чисел, либо полностью состоит из четных целых чисел, за исключением одного целого числа N.</p>
+	<p>Напишите метод, который принимает массив в качестве аргумента и возвращает этот «выброс» N.</p>
+	
+	
+	
+    <p>Example:</p>
+	<p>[2, 4, 0, 100, 4, 11, 2602, 36] - Should return: 11 (the only odd number)</p>
+	<p>[160, 3, 1719, 19, 11, 13, -21] - Should return: 160 (the only even number)</p>
+	
+	
+	
+<script>
+
+	function findOutlier(integers) {
+		regExpOdd = /\-?\d*[13579]\s/g;
+		regExpEven = /\-?\d*[02468]\s/g;
+		let str = integers.join(' ') + ' ';
+		console.log(str);
+		let even = str.match(regExpEven);
+		let odd = str.match(regExpOdd);
+		let res = even.length === 1 ? even : odd;
+		console.log(even);
+		console.log(odd);
+		res.join().slice(0, -1);	
+		return +res;
+	}	
+	
+	console.log( findOutlier([1601, 3, -258]) );
+	
+							
+</script>
+
+</body>
+</html>

@@ -401,8 +401,58 @@ const HIGH_TEMPERATURES = {
 // const highTomorrow = HIGH_TEMPERATURES.tomorrow;
 const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
 
-//
- 
+// use-destructuring-assignment-to-assign-variables-from-nested-objects
+
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};  
+	// const lowToday = LOCAL_FORECAST.today.low;
+	// const highToday = LOCAL_FORECAST.today.high;
+ const { today: {low: lowToday, high:highToday }} = LOCAL_FORECAST;
+
+// use-destructuring-assignment-with-the-rest-parameter-to-reassign-array-elements
+
+//Результат похож на Array.prototype.slice()показанный ниже:
+
+//const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+//console.log(a, b);
+//console.log(arr);
+//Консоль отобразит значения 1, 2и [3, 4, 5, 7].
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {  
+  const [a, b, ...arr] = list;  
+  return arr;
+}
+const arr = removeFirstTwo(source);
+
+// use-destructuring-assignment-to-pass-an-object-as-a-functions-parameters
+
+// В некоторых случаях вы можете деструктурировать объект в самом аргументе функции.
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+}
+
+// Это эффективно разрушает объект, отправленный в функцию. Это также можно сделать на месте:
+const profileUpdate = ({ name, age, nationality, location }) => {
+
+}
+
+// Используйте деструктурирующие назначения в аргументе функции halfтолько для отправки maxи minвнутри функции.
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = ({max, min}) => (max + min) / 2.0; 
+
+// 
 
 
 
