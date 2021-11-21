@@ -516,7 +516,16 @@ const bicycle = {
 bicycle.setGear(3);
 console.log(bicycle.gear);
 
-// 
+// use-class-syntax-to-define-a-constructor-function
+
+class Vegetable {
+  constructor(targetPlanet) {
+    this.name = targetPlanet;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
 
 
 
