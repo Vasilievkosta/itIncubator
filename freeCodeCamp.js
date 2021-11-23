@@ -556,8 +556,14 @@ import { uppercaseString, lowercaseString } from './string_functions.js';
 uppercaseString("hello");
 lowercaseString("WORLD!");
 
+// use--to-import-everything-from-a-file
 
+import * as stringFunctions from "./string_functions.js";
 
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+// 
 
 
 

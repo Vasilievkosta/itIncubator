@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>Tortoise racing</i></b></p>
+	
+	<p><i>Сложность: </i><b>6kyu</b></p>
+	<p>Две черепахи по имени A и B должны участвовать в гонке. A стартует со средней скоростью 720 feet per hour. Молодой B знает, что бежит быстрее, чем A , и, кроме того, еще не доел свою капусту.
+
+Когда она наконец стартует, она видит, что у A есть скорость, 70 feet leadа у B - скорость 850 feet per hour. Сколько времени потребуется B, чтобы поймать A ?
+
+В более общем плане: учитывая две скорости v1( скорость A , целое число> 0) и v2( скорость B , целое число> 0) и опережение g(целое число> 0), сколько времени потребуется B, чтобы догнать A ?
+
+Результатом будет массив, [hour, min, sec]который представляет собой необходимое время в часах, минутах и ​​секундах (округление до ближайшей секунды) или строку на некоторых языках.</p>
+	
+    
+
+
+<script>
+
+function race (v1, v2, g) {
+
+  if (v1 >= v2) return null;
+
+  const time = g / ( v2 - v1 );
+
+  let hours = Math.floor(time);
+  let minutes = Math.floor((time * 60) % 60);
+  let seconds = Math.floor((time * 3600) % 60);
+
+  return [ hours, minutes, seconds ];
+}
+	console.log( race(80, 100, 40) );
+	
+	
+</script>
+</body>
+</html>
