@@ -440,6 +440,16 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 
 }
 
+//use-destructuring-assignment-to-assign-variables-from-arrays
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+
+// Используйте назначение деструктурирования, чтобы поменять местами значения aи, bчтобы получить aзначение, хранящееся в b, и получить bзначение, хранящееся в a.
+
+let a = 8, b = 6;
+[a, b] = [b, a];
+
 // Используйте деструктурирующие назначения в аргументе функции halfтолько для отправки maxи minвнутри функции.
 
 const stats = {
@@ -488,7 +498,7 @@ const createPerson = (name, age, gender) => ({
 // createPerson("Zodiac Hasbro", 56, "male");
 // вернет {name: "Zodiac Hasbro", age: 56, gender: "male"}
 
-//При определении функций внутри объектов в ES5 мы должны использовать ключевое слово functionследующим образом:
+//При определении функций внутри объектов в ES5 мы должны использовать ключевое слово function следующим образом:
 
 const person = {
   name: "Taylor",
@@ -496,7 +506,7 @@ const person = {
     return `Hello! My name is ${this.name}.`;
   }
 };
-//В ES6 вы можете полностью удалить functionключевое слово и двоеточие при определении функций в объектах. Вот пример этого синтаксиса:
+//В ES6 вы можете полностью удалить function ключевое слово и двоеточие при определении функций в объектах. Вот пример этого синтаксиса:
 
 const person = {
   name: "Taylor",
@@ -526,6 +536,54 @@ class Vegetable {
 
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // Should display 'carrot'
+
+
+// /use-getters-and-setters-to-control-access-to-an-object
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
+//Консоль отобразит строки anonymous и newAuthor.
+
+//Обратите внимание на синтаксис, используемый для вызова методов получения и установки. Они даже не похожи на функции.
+//Геттеры и сеттеры важны, потому что они скрывают внутренние детали реализации.
+
+//Используйте classключевое слово для создания Thermostatкласса. constructorПринимает температуру по Фаренгейту.
+//В классе создайте a, getterчтобы получить температуру в градусах Цельсия, и a, setterчтобы установить температуру в градусах Цельсия.
+//В этом сила геттера и сеттера. Вы создаете API для другого пользователя, который может получить правильный результат независимо от того, какой из них вы отслеживаете.
+//Другими словами, вы абстрагируете детали реализации от пользователя.
+
+class Thermostat {
+    constructor(far) {
+      this._far = far;
+  }
+
+  get temperature() {  
+    return 5/9 * (this._far - 32);
+  }
+
+  set temperature(cel) {
+    this._far = cel * 9.0 / 5 + 32;
+  }
+}
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
 
 // create-a-module-script
 
@@ -563,7 +621,24 @@ import * as stringFunctions from "./string_functions.js";
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
 
-// 
+// create-an-export-fallback-with-export-default
+// Следующая функция должна быть резервным значением для модуля.
+
+export default function subtract(x, y) {
+  return x - y;
+}
+
+// import-a-default-export
+import subtract from "./math_functions.js";
+
+subtract(7,4);
+
+// create-a-javascript-promise
+const makeServerRequest = new Promise((resolve, reject) => {
+  
+})
+
+
 
 
 
