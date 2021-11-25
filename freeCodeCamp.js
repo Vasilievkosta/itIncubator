@@ -638,6 +638,46 @@ const makeServerRequest = new Promise((resolve, reject) => {
   
 })
 
+// complete-a-promise-with-resolve-and-reject
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    resolve ('We got the data');
+  } else {  
+    reject ('Data not received');
+});
+
+// handle-a-fulfilled-promise-with-then
+
+// Добавьте then метод к своему обещанию.
+// Используйте result в качестве параметра функции обратного вызова и войдите resultв консоль.
+
+//Добавьте catch метод к своему обещанию.
+// Используйте error в качестве параметра функции обратного вызова и войдите errorв консоль.
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+makeServerRequest.catch(error => {
+  console.log(error);
+});
+
+
 
 
 
