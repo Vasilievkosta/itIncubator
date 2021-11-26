@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>Tank Truck</i></b></p>
+	
+	<p><i>Сложность: </i><b>6kyu</b></p>
+	<p>Чтобы представить проблему, подумайте о моем соседе, который водит автоцистерну. Индикатор уровня не горит, и он обеспокоен тем, что не знает, сможет ли он осуществить доставку. Поставили грузовик на горизонтальную площадку и измерили высоту жидкости в баке.</p>
+<p>К счастью, резервуар представляет собой идеальный цилиндр, а вертикальные стенки на каждом конце плоские. Высота оставшейся жидкости h, диаметр основания цилиндра d, общий объем vt(h, d, vt - положительные или нулевые целые числа). Вы можете предположить, что d >= h).</p>
+<p>Не могли бы вы рассчитать оставшийся объем жидкости? Ваша функция tankvol(h, d, vt)возвращает целое число, которое является усеченным результатом (например, полом) вашего вычисления с плавающей запятой.</p>
+	<p>Example</p>
+	<p>tankvol(40,120,3500) should return 1021 (calculation gives about: 1021.26992027)</p>
+	<p>tankvol(60,120,3500) should return 1750</p>
+	<p>tankvol(80,120,3500) should return 2478 (calculation gives about: 2478.73007973)</p>
+    
+
+
+<script>
+
+function tankvol (h, d, vt) {
+	let alfa = 2 * Math.acos((d/2-h)/(d/2));
+	console.log(alfa);
+	let sAll = Math.PI * d ** 2 / 4;
+	let sPart = (d / 2) ** 2 * (alfa - Math.sin(alfa)) / 2;
+	console.log(sAll);
+	console.log(sPart);
+	return Math.floor(vt * sPart / sAll);
+  
+}
+	console.log( tankvol(60, 120, 3500) );
+	
+	
+</script>
+</body>
+</html>

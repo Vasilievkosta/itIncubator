@@ -283,7 +283,7 @@ function rangeOfNumbers(startNum, endNum) {
 };
 
 
-//es6/____________
+//es6/__________________________________________
 //compare-scopes-of-the-var-and-let-keywords
 
 function checkScope() {
@@ -677,6 +677,21 @@ makeServerRequest.catch(error => {
   console.log(error);
 });
 
+// use-typeof-to-check-the-type-of-a-variable
+let seven = 7;
+let three = "3";
+console.log(seven + three);
+// Only change code below this line
+console.log(typeof(seven));
+console.log(typeof(three));
+
+// catch-misspelled-variable-and-function-names
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+console.log(`Net working capital is: ${netWorkingCapital}`);
+
+// 
 
 
 
