@@ -691,6 +691,21 @@ let payables = 8;
 let netWorkingCapital = receivables - payables;
 console.log(`Net working capital is: ${netWorkingCapital}`);
 
+// catch-unclosed-parentheses-brackets-braces-and-quotes
+let myArray = [1, 2, 3];
+let arraySum = myArray.reduce((previous, current) =>  previous + current);
+console.log(`Sum of array values is: ${arraySum}`);
+
+
+
+
+//______________________________________________
+// Debager
+
+// catch-mixed-usage-of-single-and-double-quotes
+let innerHtml = '<p>Click here to <a href="#Home">return home</a></p>';
+console.log(innerHtml);
+
 // 
 
 
