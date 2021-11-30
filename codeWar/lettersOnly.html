@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<p>Назавание задачи: <b><i>letters only, please!</i></b></p>
+	
+	<p><i>Сложность: </i><b>7kyu</b></p>
+	<p>Предположим, нам нужны «чистые» строки. Чистые средства строка должна содержать только буквы a-z, A-Zи пробелы.</p>
+	<p>Мы предполагаем, что нет двойных пробелов или разрывов строк.</p>
+	<p>Напишите функцию, которая принимает строку и возвращает строку без ненужных символов.</p>
+	<p>Example</p>
+	<p>removeChars('.tree1')    ==> 'tree'</p>
+	<p>removeChars("that's a pie$ce o_f p#ie!")  ==> 'thats a piece of pie'</p>
+	<p>removeChars('my_list = ["a","b","c"]')    ==> 'mylist  abc'</p>
+
+<script>
+
+function removeChars(s) {
+	return s.replace(/[^a-z ]/gi, '');
+}
+	console.log( removeChars("0123456789(.)+,|[]{}=@/~;^$'<>?-!*&:#%_") );
+	
+	
+</script>
+</body>
+</html>
