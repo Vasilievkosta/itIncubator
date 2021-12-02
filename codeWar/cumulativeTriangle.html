@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<h2>Cumulative Triangle</h2>
+	<p>Треугольник из цифр.Начиная с цифры «1», «1» располагается в верхней части треугольника. Поскольку это 1-я строка, она может поддерживать только одно число.
+2-я строка может содержать следующие 2 числа: «2» и «3».
+Аналогично, 3-я строка может поддерживать только следующие 3 числа: «4», «5», «6».</p>
+	<p><i>Сложность: </i><b>6kyu</b></p>
+	
+	<p>1</p>
+	<p>2 3</p>
+	<p>4 5 6</p>
+	<p>7 8 9 10</p>
+	
+	<p>Example:</p>
+	<p>n=3 ==> 15 т.к.(4+5+6)</p>
+    
+	<p>Закоментировано, это как я решал, а потом подсмотрел. Мда...</p>
+</body>
+
+<script>
+
+
+
+function cumulativeTriangle(n) {
+<!-- let k = 0; -->
+<!-- let arr; -->
+	<!-- for (let i = 1; i <= n; i++) {		 -->
+		<!-- arr = []; -->
+		<!-- for (j = k+1; j < k+i+1; j++) {			 -->
+			<!-- arr.push(j); -->
+		<!-- }		 -->
+		<!-- k = arr[arr.length-1]; -->
+	<!-- } -->
+	<!-- console.log(arr); -->
+	<!-- return arr.reduce((acc, item) => acc + item, 0);	 -->
+	return (n*n*n+n)/2;
+}
+	
+	console.log(cumulativeTriangle(10));
+	
+	
+</script>
+
+</html>

@@ -728,9 +728,33 @@ let row = [];
 let matrix = zeroArray(3, 2);
 console.log(matrix);
 
+
+
+// basic-data-structures________________________
+
+// add-items-to-an-array-with-push-and-unshift
+
+function mixedNumbers(arr) {
+  // Only change code below this line
+arr.unshift('I', 2, 'three');
+arr.push(7, 'VIII', 9);
+  // Only change code above this line
+  return arr;
+}
+
+console.log(mixedNumbers(['IV', 5, 'six']));
+
+//remove-items-from-an-array-with-pop-and-shift
+
+function popShift(arr) {
+  let popped = arr.pop();
+  let shifted = arr.shift();
+  return [shifted, popped];
+}
+
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+
 // 
-
-
 
 
 
