@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test | test</title>    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+	<p>Страница как черновик для тестирования задач на ресурсе <b>codeWars</b></p>
+	
+	<h2>Bleatrix Trotter (The Counting Sheep)</h2>
+	<p><i>Сложность: </i><b>6kyu</b></p>	
+	
+	<p>Whenever she names a number, she thinks about all of the digits in that number.</p>
+	<p>She keeps track of which digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) she has seen at least once so far as part of any number she has named.</p>
+	<p>Once she has seen each of the ten digits at least once, she will fall asleep.</p>
+	<p>Bleatrix must start with N and must always name (i + 1) × N directly after i × N.</p>
+
+<ul>For example, suppose that Bleatrix picks N = 1692. She would count as follows:
+<li>N = 1692. Now she has seen the digits 1, 2, 6, and 9.</li>
+<li>2N = 3384. Now she has seen the digits 1, 2, 3, 4, 6, 8, and 9.</li>
+<li>3N = 5076. Now she has seen all ten digits, and falls asleep.</li>
+</ul>
+<p>The purpose of this kata is to return the last number Bleatrix Trotter sees before falling asleep.</p>
+	
+	
+</body>
+
+<script>
+
+
+
+function trotter(n){
+  if (n === 0) return 'INSOMNIA';
+	let i = 1;
+	let regExp = /^0123456789/;	
+	let res = '';
+	let set = '';
+	let arr = [];
+	let rop = (count) => {	
+		k = String(count * i) + set;		
+		arr = k.split('');		
+		set = Array.from(new Set(arr)).sort().join('');	
+		res = regExp.test(set);		
+		if (res) return String(count * i);	
+		else {
+			i++;
+			rop(n);
+		}
+	}	
+	rop(n);
+	return (rop(n));
+}
+	
+	console.log(trotter(0));
+	
+	
+</script>
+
+</html>

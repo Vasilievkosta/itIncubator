@@ -754,6 +754,32 @@ function popShift(arr) {
 
 console.log(popShift(['challenge', 'is', 'not', 'complete']));
 
+// add-items-using-splice
+function htmlColorNames(arr) {
+  // Only change code below this line
+arr.splice(0, 2, 'DarkSalmon', 'BlanchedAlmond');
+  // Only change code above this line
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+
+// copy-array-items-using-slice 
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+
+let todaysWeather = weatherConditions.slice(1, 3);
+// todaysWeatherимел бы значение ['snow', 'sleet'], в то время как weatherConditionsвсе равно имел бы ['rain', 'snow', 'sleet', 'hail', 'clear'].
+// Фактически, мы создали новый массив, извлекая элементы из существующего массива.
+
+function forecast(arr) {
+  // Only change code below this line
+arr = arr.slice(2, 4);
+  return arr;
+}
+
+// Only change code above this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
 // 
 
 
