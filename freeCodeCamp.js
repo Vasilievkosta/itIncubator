@@ -780,7 +780,37 @@ arr = arr.slice(2, 4);
 // Only change code above this line
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 
+//  copyMachineкоторая принимает arr(массив) и num(число) в качестве аргументов.
+// Функция должна возвращать новый массив, состоящий из numкопий arr.
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    
+newArr.push([...arr]);
+    
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+// определили функцию, spreadOutкоторая возвращает переменную sentence.
+// Измените функцию с помощью оператора распространения, чтобы она возвращала массив ['learning', 'to', 'code', 'is', 'fun'].
+
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence;
+}
+
+console.log(spreadOut());
+
 // 
+
+
+
 
 
 
