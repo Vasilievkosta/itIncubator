@@ -807,6 +807,30 @@ function spreadOut() {
 
 console.log(spreadOut());
 
+// check-for-the-presence-of-an-element-with-indexof
+
+function quickCheck(arr, elem) {  
+	return arr.indexOf(elem) >= 0;  
+}
+
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+// iterate-through-all-an-arrays-items-using-for-loops
+
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // Only change code below this line
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) === -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  // Only change code above this line
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
 // 
 
 
