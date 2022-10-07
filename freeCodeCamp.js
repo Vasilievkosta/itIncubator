@@ -851,7 +851,41 @@ let myNestedArray = [
   // Only change code above this line
 ];
 
-// 
+// modify-an-object-nested-within-an-object
+
+// let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+// Only change code below this line
+userActivity.data.online = 45;
+// Only change code above this line
+
+console.log(userActivity);
+
+// access-property-names-with-bracket-notation
+
+// let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  // Only change code below this line
+return foods[scannedItem];
+  // Only change code above this line
+}
+
+console.log(checkInventory("apples"));
 
 
 
@@ -1108,4 +1142,27 @@ let result = str.replace(fixRegex, replaceText);
 let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/g;
 let result = hello.replace(wsRegex, "");
+
+// найти в первом агрументе str - before и заменить на after. Учитывыя регистр before 
+
+function myReplace(str, before, after) {
+	let afterModern;
+	if (before.charCodeAt(0) > 90) {
+		console.log('маленькая');
+		afterModern = `${after.charAt(0).toLowerCase()}${after.slice(1)}`;
+	} else {
+		console.log('большая');
+		afterModern = after.replace(after.charAt(0), after.charAt(0).toUpperCase());
+	}
+  console.log( 'ZBC'.charCodeAt(0) );
+  console.log(str)
+  console.log(before);
+  console.log(after);
+  console.log(afterModern);
+  console.log(str.replace(before, afterModern))
+  
+  
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "Leaped");
 
