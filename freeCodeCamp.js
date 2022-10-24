@@ -2400,4 +2400,31 @@ console.log( pigLatyn('gdoht') );
 
 // End. Конец копирования.
 
+// задача поиска суммы простых чисел в диапазоне до заданного
+
+function sumPrimes(num) {
+  let result = [];
+  for (let i = 2; i <= num; i++) {    
+    let back = onePrimes(i);
+  if (back) {
+    result.push(back)
+  }
+  }
+  return (result.reduce((prev, next) => prev+next, 0));
+}
+
+
+function onePrimes(one) {  
+  const midll = Math.round(one/2);
+  for(let i = 2; i <= midll; i++) {
+    if (one % i === 0) {
+      return false
+    }
+  }
+  return one;
+}
+
+sumPrimes(10);
+
+// 
 
