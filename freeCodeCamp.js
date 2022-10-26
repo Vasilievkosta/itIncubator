@@ -2426,5 +2426,21 @@ function onePrimes(one) {
 
 sumPrimes(10);
 
-// 
+// из Codewars 5kyu
+
+const scramblies = (str1, str2) => {
+	let iter = str1;
+	let res;
+	for (let i = 0; i < str2.length; i++) {
+		
+		res = iter.replace(str2[i], '*');
+		iter = res;
+	}
+	let result = res.split('').filter((el) => el === '*');
+	return result.length === str2.length;
+}
+
+console.log( scramblies('gdohot', 'hotot') );
+// возможность составить str2 из str1
+// не проходить проверку на скорость алгоритма
 
