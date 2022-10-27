@@ -1186,18 +1186,19 @@ const pigLatyn = (str) => {
 
 console.log( pigLatyn('gdoht') );
 
+// задача поиска суммы простых чисел в диапазоне до заданного
 
+function sumPrimes(num) {
+  let result = [];
+  for (let i = 2; i <= num; i++) {    
+    let back = onePrimes(i);
+  if (back) {
+    result.push(back)
+  }
+  }
+  return (result.reduce((prev, next) => prev+next, 0));
 
-
-
-
-
-
-
-
-
-
-// Строка 1200. С это момента скопирую все еще раз для gitHub
+// Строка 1201. С это момента скопирую все еще раз для gitHub
 
 // record-collection
 //Коллекция записей
@@ -2411,7 +2412,6 @@ function sumPrimes(num) {
   }
   }
   return (result.reduce((prev, next) => prev+next, 0));
-}
 
 
 function onePrimes(one) {  
